@@ -25,3 +25,14 @@ for k in range(epochs):
         y_pred = model(x)  # Forward pass
         loss = (y_pred - Value(y)) ** 2  # Mean squared error loss
         total_loss += loss
+    
+    # Backward pass: reset gradients, calculate new gradients
+    model.zero_grad()  # Clear previous gradients
+    total_loss.backward()  # Backpropagation
+    
+    # Update model parameters using gradient descent
+    for p in model.parameters():
+        p.data -= learning_rate * p.grad
+    
+    # Print the progress: epoch and current loss
+    print(k, total_loss.data)
