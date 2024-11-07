@@ -83,10 +83,10 @@ class Value:
     def __neg__(self): # -self
         return self * -1
 
-    def __radd__(self, other): # other + self
+    def __radd__(self, other): 
         return self + other
     
-    def __truediv__(self, other): # self / other
+    def __truediv__(self, other): 
         return self * other**-1
 
     def __rtruediv__(self, other): # other / self
