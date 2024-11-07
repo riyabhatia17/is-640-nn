@@ -19,7 +19,7 @@ for k in range(20):
     # Calculate loss as a Value object
     loss = sum((yout - ygt) ** 2 for ygt, yout in zip(ys, ypred))
 
-    # Backward pass
+ 
     for p in n.parameters():
         p.grad = 0.0
     loss.backward()  
