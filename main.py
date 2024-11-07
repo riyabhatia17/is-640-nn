@@ -24,7 +24,7 @@ for k in range(20):
         p.grad = 0.0
     loss.backward()  
 
-    # Update weights
+    
     for p in n.parameters():
         p.data += -0.1 * p.grad 
 
