@@ -5,9 +5,9 @@ from nn import MLP
 xs = [[2.0, 3.0, -1.0], 
       [3.0, -1.0, 0.5], 
       [0.5, 1.0, 1.0], 
-      [1.0, 1.0, -1.0]]  # Input data
+      [1.0, 1.0, -1.0]]  
 
-ys = [0.0, 1.0, 1.0, 0.0]  # Target outputs
+ys = [0.0, 1.0, 1.0, 0.0]  
 
 # Initialize the MLP with input and output sizes
 n = MLP(3, [4, 4, 1])
@@ -22,7 +22,7 @@ for k in range(20):
     # Backward pass
     for p in n.parameters():
         p.grad = 0.0
-    loss.backward()  # All of the gradients are accumulated and start from zero
+    loss.backward()  
 
     # Update weights
     for p in n.parameters():
